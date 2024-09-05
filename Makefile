@@ -37,6 +37,9 @@ flux-up: ## Deploy Flux Operator on the Kubernetes KinD cluster.
 
 ##@ Tools
 
+tools: ## Install Kubernetes kind, kubectl, FLux CLI and Helm Homebrew
+	brew bundle
+
 ## Location to install Go tools
 LOCALBIN ?= $(shell pwd)/bin
 $(LOCALBIN):
