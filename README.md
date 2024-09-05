@@ -33,26 +33,37 @@ make tools
 Start the dev environment with:
 
 ```shell
-make
+make up
 ```
 
-The `make` command performs the following steps:
-- creates the Docker registry container if it's not already running
+The `make up` command performs the following steps:
+- creates the Docker registry container if it's not already running and exposes it on `localhost:5050`
 - creates the Kubernetes Kind cluster if it's not already running
 - pushes the Kubernetes manifests as OCI artifacts to the local registry
     - `locahost:5050/flux-cluster-sync` is generated from `kubernetes/clusters/local`
     - `locahost:5050/flux-infra-sync` is generated from `kubernetes/infra`
     - `locahost:5050/flux-apps-sync` is generated from `kubernetes/apps`
-- installs Flux Operator on the clusters and configures it to reconcile the manifests from the local registry
+- installs Flux Operator on the cluster and configures it to reconcile the manifests from the local registry
 - waits for Flux to reconcile the cluster addons from `oci://kind-registry:5000/flux-infra-sync`
 - waits for Flux to reconcile the demo apps from `oci://kind-registry:5000/flux-apps-sync`
+
+### Sync changes
+
+To sync changes to the Kubernetes manifests, run:
+
+```shell
+make sync
+```
+
+The `make sync` command pushes the Kubernetes manifests to the local registry
+and waits for Flux to reconcile the changes on the cluster.
 
 ### Tear down
 
 To tear down the dev environment, run:
 
 ```shell
-make cluster-down
+make down
 ```
 
-This command will delete the Kind cluster and the Docker registry container.
+The `make up` command deletes the Kind cluster and the Docker registry container.
