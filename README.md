@@ -1,5 +1,8 @@
 # flux-operator-local-dev
 
+[![test](https://github.com/controlplaneio-fluxcd/flux-operator-local-dev/actions/workflows/test.yaml/badge.svg)](https://github.com/controlplaneio-fluxcd/flux-operator-local-dev/actions/workflows/test.yaml)
+[![license](https://img.shields.io/github/license/controlplaneio-fluxcd/flux-operator-local-dev.svg)](https://github.com/controlplaneio-fluxcd/flux-operator-local-dev/blob/main/LICENSE)
+
 [Flux Operator](https://github.com/controlplaneio-fluxcd/flux-operator)
 local dev environment with Docker and Kubernetes KIND.
 
@@ -44,8 +47,8 @@ The `make up` command performs the following steps:
     - `locahost:5050/flux-infra-sync` is generated from `kubernetes/infra`
     - `locahost:5050/flux-apps-sync` is generated from `kubernetes/apps`
 - installs Flux Operator on the cluster and configures it to reconcile the manifests from the local registry
-- waits for Flux to reconcile the cluster addons from `oci://kind-registry:5000/flux-infra-sync`
-- waits for Flux to reconcile the demo apps from `oci://kind-registry:5000/flux-apps-sync`
+- waits for Flux to reconcile the cluster addons from `oci://flux-registry:5000/flux-infra-sync`
+- waits for Flux to reconcile the demo apps from `oci://flux-registry:5000/flux-apps-sync`
 
 ### Sync changes
 
