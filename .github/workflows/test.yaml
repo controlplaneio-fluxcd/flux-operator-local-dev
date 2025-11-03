@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Setup Flux CLI
-        uses: fluxcd/flux2/action@4a15fa6a023259353ef750acf1c98fe88407d4d0 #v2.7.2
+        uses: fluxcd/flux2/action@b6e76ca2534f76dcb8dd94fb057cdfa923c3b641 #v2.7.3
       - name: Setup Flux Operator CLI
         uses: controlplaneio-fluxcd/flux-operator/actions/setup@ee1939211d37e56f71e56c4a951a07a385bd5492 #v0.33.0
       - run: make up
