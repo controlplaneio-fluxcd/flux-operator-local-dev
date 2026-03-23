@@ -18,7 +18,7 @@ jobs:
       - name: Setup Flux CLI
         uses: fluxcd/flux2/action@871be9b40d53627786d3a3835a3ddba1e3234bd2 #v2.8.3
       - name: Setup Flux Operator CLI
-        uses: controlplaneio-fluxcd/flux-operator/actions/setup@9fe4e82aca006fad28bf32763092a39c174d64b7 #v0.45.0
+        uses: controlplaneio-fluxcd/flux-operator/actions/setup@c5505a455515f0ea78e04ff6f380cba8fe42a357 #v0.45.1
       - run: make up
       - run: make sync
       - run: make ls
