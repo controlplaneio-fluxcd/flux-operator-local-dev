@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       - name: Setup Flux CLI
-        uses: fluxcd/flux2/action@871be9b40d53627786d3a3835a3ddba1e3234bd2 #v2.8.3
+        uses: fluxcd/flux2/action@1fd61a06264d71cf445ed55c4f14d401d26a1c64 #v2.8.8
       - name: Setup Flux Operator CLI
-        uses: controlplaneio-fluxcd/flux-operator/actions/setup@9fe4e82aca006fad28bf32763092a39c174d64b7 #v0.45.0
+        uses: controlplaneio-fluxcd/flux-operator/actions/setup@5836c14559f39a466a7c413e55e0ee35480a0250 #v0.50.0
       - run: make up
       - run: make sync
       - run: make ls
